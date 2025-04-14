@@ -1,6 +1,4 @@
-# Personal Finance Api - BASIS
-
-# Projeto API .NET Core (Teste Entrevista BASIS)
+# Projeto API .NET Core (Entrevista BASIS)
 
 ## Tecnologias
 
