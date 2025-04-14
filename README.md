@@ -1,17 +1,13 @@
-# Personal Finance Control API
+# Projeto API .NET Core (Entrevista BASIS)
 
-This REST API is built using .NET 6, Clean Architecture, Entity Framework Core, and XUnit for tests.  
-It manages Users, Accounts, Transactions, Categories, and Financial Goals � essential components for a personal finance control system that can feed dashboards and reports.
+## Tecnologias
 
-## Features
+* .NET 8
+* ASP.NET Core
+* EF Core
+* XUnit 
+* PostgreSQL
+* Clean Architecture
 
-- CRUD operations for Users, Accounts, Transactions, Categories, and Financial Goals.
-- Automatic balance update when transactions are processed.
-- Soft delete for critical entities.
-- Endpoints for aggregated data (Dashboard).
-- PostgreSQL support (configurable for SQL Server).
-- Containerized with Docker and docker-compose.
-- Examples of CI/CD and DevOps practices (ready for pipeline integration).
-
-## Project Structure
-
+Criei a API levando em conta uma base para um projeto mais avançado de controle de finanças pessoal, ele foi feito com 6 entidades relacionadas entre si, User possuindo Accounts e FinancialGoals e Account contendo Transactions associadas a Categories. 
+Foi criado também métodos acessiveis através de endpoints simples de manipulação para cada uma.
