@@ -6,7 +6,7 @@
 * ASP.NET Core
 * EF Core
 * XUnit 
-* PostgreSQ
+* PostgreSQL
 * Clean Architecture
 
 Criei a API levando em conta uma base para um projeto mais avançado de controle de finanças pessoal, ele foi feito com 6 entidades relacionadas entre si, User possuindo Accounts e FinancialGoals e Account contendo Transactions associadas a Categories. 
