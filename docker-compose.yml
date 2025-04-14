@@ -4,24 +4,29 @@
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      - sqlserver
     environment:
-      - ConnectionStrings__Default=Host=db;Database=FinanceApiDB;Username=postgres;Password=postgres
-      - ASPNETCORE_URLS=http://+:8080   
       - ASPNETCORE_ENVIRONMENT=Development
-    env_file:
-      - .env
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=DB_FINANCE_API;User=sa;Password=Interview@2025;TrustServerCertificate=True;
+    networks:
+      - backend-network
 
-  db:
-    image: postgres:15
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: FinanceApiDB
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      SA_PASSWORD: "Interview@2025"
+      ACCEPT_EULA: "Y"
     ports:
-      - "5432:5432"
+      - "1433:1433"
+    networks:
+      - backend-network
+    volumes:
+      - sqlvolume:/var/opt/mssql
 
 volumes:
-  postgres_data:
+  sqlvolume:
+
+networks:
+  backend-network:
