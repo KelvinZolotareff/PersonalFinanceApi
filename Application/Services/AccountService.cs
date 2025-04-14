@@ -76,7 +76,6 @@ namespace Application.Services
         }
         public async Task<object> GetDashboardDataAsync()
         {
-            // Example: Return account balance and count of transactions per account
             var accounts = await _accountRepository.GetAllAsync();
             var dashboard = accounts.Select(a => new
             {
